@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElectricaltHub | Your Source for Electronics</title>
-    <!-- Load Tailwind CSS for modern, responsive styling -->
+    <title>Embedded Systems & IoT Component Guide</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom font import and background for a professional, technical look */
@@ -23,156 +22,226 @@
 
         .component-card:hover {
             transform: translateY(-5px);
+            /* Teal glow effect on hover */
             box-shadow: 0 10px 15px -3px rgba(45, 212, 191, 0.4), 0 4px 6px -4px rgba(45, 212, 191, 0.1);
         }
+
+        /* Style for the active tab content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Style for active navigation tab */
+        .nav-link.active {
+            border-bottom: 3px solid #2dd4bf; /* Teal color */
+            color: #2dd4bf;
+            font-weight: 600;
+        }
+
+        /* Component image placeholder styling */
+        .image-placeholder {
+            background-color: #e5e7eb;
+            color: #4b5563;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 8px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
     </style>
+    <script>
+        // JavaScript for Tab Switching
+        function openTab(tabName) {
+            // Hide all tab content
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Deactivate all navigation links
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Show the current tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Activate the corresponding navigation link
+            document.querySelector(`[onclick="openTab('${tabName}')"]`).classList.add('active');
+        }
+
+        // Set 'Home' as the default active tab when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            openTab('Home');
+        });
+    </script>
 </head>
 <body class="min-h-screen antialiased">
     
-    <!-- Header / Navbar -->
-    <header class="bg-gray-800 text-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold tracking-tight text-teal-400">Component<span class="text-white">Hub</span></h1>
-            <!-- General WhatsApp Contact Button -->
+    <header class="bg-gray-800 text-white shadow-lg sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-400">Component<span class="text-white">Guide</span></h1>
+            
+            <nav class="flex space-x-4 sm:space-x-6">
+                <a href="#" class="nav-link px-3 py-2 text-sm font-medium transition duration-150 ease-in-out hover:text-teal-400" onclick="openTab('Home')">Home</a>
+                <a href="#" class="nav-link px-3 py-2 text-sm font-medium transition duration-150 ease-in-out hover:text-teal-400" onclick="openTab('About')">About</a>
+                <a href="#" class="nav-link px-3 py-2 text-sm font-medium transition duration-150 ease-in-out hover:text-teal-400" onclick="openTab('Projects')">Projects</a>
+                <a href="#" class="nav-link px-3 py-2 text-sm font-medium transition duration-150 ease-in-out hover:text-teal-400" onclick="openTab('Services')">Services</a>
+                <a href="#" class="nav-link px-3 py-2 text-sm font-medium transition duration-150 ease-in-out hover:text-teal-400" onclick="openTab('Contacts')">Contacts</a>
+            </nav>
+
             <a href="https://wa.me/923017647935?text=Hello!%20I%20visited%20your%20website%20and%20I%20have%20an%20inquiry%20about%20your%20components." 
                target="_blank" 
-               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
+               class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.002 0c6.623 0 12 5.378 12 12s-5.377 12-12 12c-2.094 0-4.045-.536-5.772-1.472l-4.228 1.472 1.492-4.144c-1.026-1.782-1.5-3.805-1.5-5.856 0-6.623 5.378-12 12-12zm3.321 16.488c-.144.254-.423.473-.728.528l-.053.003c-.227.014-1.293.023-2.316-.388-1.587-.624-3.411-2.039-4.821-4.636-.263-.483-.162-.647-.021-.806.143-.158.33-.298.471-.462.14-.165.298-.329.412-.472.115-.143.15-.26.242-.44.093-.18.067-.344-.025-.508-.09-.164-.204-.44-.319-.62-.115-.181-.23-.424-.23-.442-.093-.143-.207-.267-.298-.372-.093-.105-.207-.21-.308-.21-.105 0-.174.004-.266.009-.092.005-.23.018-.369.018-.139 0-.374-.018-.567-.018.196-.441.442-.648.728-.888.286-.24.62-.416.924-.623.303-.207.618-.473.97-.56.353-.087.712-.132 1.059-.132.345 0 .753.056 1.056.41.303.355.674 1.077.674 1.761 0 .685-.371 1.344-.674 1.758-.303.416-.583.504-.81.651-.227.147-.492.34-.675.487-.182.146-.372.339-.372.671 0 .332.189.57.371.723.18.153.49.336.726.487.236.15.522.34.675.487.153.146.29.352.428.532.139.18.318.47.37.585.05.115.105.21.105.325 0 .115-.055.23-.105.344-.052.115-.15.228-.276.359z"/></svg>
                 Contact via WhatsApp
             </a>
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <!-- Hero Section -->
-        <section class="text-center mb-16 bg-white p-8 rounded-xl shadow-xl">
-            <h2 class="text-5xl font-extrabold text-gray-900 mb-4">
-                The Essential Components You Need
+        <div id="Home" class="tab-content active bg-white p-8 rounded-xl shadow-xl">
+            <h2 class="text-5xl font-extrabold text-gray-900 mb-4 text-center">
+                Welcome to the **Embedded Systems & IoT Component Guide!**
             </h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
-                Explore our catalog of high-quality resistors, microcontrollers, LEDs, and more. Found what you need? Hit the "Order Now" button to contact us directly via WhatsApp and secure your purchase!
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-6 text-center">
+                This resource provides a structured, visual list of the essential hardware components—from the main **Controllers** to the **Sensors** and **Actuators**—needed to bring your IoT and embedded projects to life. Use the tabs above to navigate the detailed sections.
             </p>
-            <!-- Call to action button to WhatsApp -->
-            <a href="https://wa.me/923017647935?text=I%20am%20ready%20to%20place%20an%20order%20for%20some%20of%20your%20electronic%20components." 
-               target="_blank" 
-               class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 ease-in-out shadow-lg">
-                <span class="mr-2 text-xl">&#x1F4F1;</span> Start Your Order on WhatsApp
-            </a>
-        </section>
+            <div class="text-center">
+                <a href="#" onclick="openTab('Projects')" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-teal-500 hover:bg-teal-600 transition duration-150 ease-in-out shadow-lg">
+                    <span class="mr-2 text-xl">&#x1F6E0;</span> Explore Components
+                </a>
+            </div>
+        </div>
 
-        <!-- Components Grid -->
-        <section>
-            <h3 class="text-4xl font-bold text-gray-800 mb-8 text-center border-b-2 border-teal-400 pb-2">Our Featured Components</h3>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div id="About" class="tab-content bg-white p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 border-b pb-2">About This Guide</h2>
+            <p class="text-lg text-gray-600 mb-4">
+                This guide is designed for **clarity and quick reference**. It is structured to help you understand the role of each component within a complete system.
+            </p>
+            <h3 class="text-2xl font-semibold text-teal-600 mb-3">The Three Primary Functions of an Electronic System:</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
+                <li>**Controller (The Brain):** Executes code and manages the system. This is where your intelligence lives.</li>
+                <li>**Sensors (The Senses):** Gathers input from the environment (temperature, light, motion, etc.).</li>
+                <li>**Actuators (The Muscles):** Executes physical actions or displays output (turning a motor, lighting an LED, showing text on a screen).</li>
+            </ul>
+        </div>
+
+        <div id="Projects" class="tab-content bg-white p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-bold text-gray-800 mb-8 border-b pb-2">1. 🧠 Controllers (Microcontroller & SBC)</h2>
+            <p class="text-lg text-gray-600 mb-6">These components serve as the central processing unit for your embedded projects.</p>
+
+            <div class="space-y-8">
+                <h3 class="text-3xl font-semibold text-teal-600 mb-4">1.1 Microcontrollers & System-on-Chips (SoCs)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
+                        <div class="image-placeholder">
+
+[Image of Arduino Uno]
+</div>
+                        <h4 class="text-xl font-medium text-gray-900 mt-3">1.1.1 Arduino Uno</h4>
+                        <p class="text-sm text-gray-500">The beginner-friendly, standard 8-bit board.</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20Arduino%20Uno" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                    </div>
+                    <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
+                        <div class="image-placeholder"></div>
+                        <h4 class="text-xl font-medium text-gray-900 mt-3">1.1.4 ESP32 (Wi-Fi/BLE)</h4>
+                        <p class="text-sm text-gray-500">Dual-core processing with integrated IoT connectivity.</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20ESP32" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                    </div>
+                    <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
+                        <div class="image-placeholder"></div>
+                        <h4 class="text-xl font-medium text-gray-900 mt-3">1.1.5 ESP8266 (Wi-Fi)</h4>
+                        <p class="text-sm text-gray-500">Cost-effective Wi-Fi solution for simple IoT tasks.</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20ESP8266" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                    </div>
+                </div>
+
+                <h2 class="text-4xl font-bold text-gray-800 mb-8 border-b pb-2 pt-6">2. 👂 Sensors (Inputs)</h2>
+                <p class="text-lg text-gray-600 mb-6">These components gather data from the physical environment.</p>
+
+                <h3 class="text-3xl font-semibold text-teal-600 mb-4">2.1 Environmental & Chemical Sensors</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
+                        <div class="image-placeholder"></div>
+                        <h4 class="text-xl font-medium text-gray-900 mt-3">2.1.1 DHT11/22 (Temp/Humidity)</h4>
+                        <p class="text-sm text-gray-500">Digital sensors for temperature and relative humidity.</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20DHT11/22%20Sensor" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                    </div>
+                    <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
+                        <div class="image-placeholder"></div>
+                        <h4 class="text-xl font-medium text-gray-900 mt-3">2.1.4 MQ-series (Gas)</h4>
+                        <p class="text-sm text-gray-500">Detects various gases (e.g., smoke, alcohol, LPG).</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20MQ-series%20Gas%20Sensor" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                    </div>
+                </div>
                 
-                <!-- Component Card 1: Resistor -->
-                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
-                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
-                        <!-- Placeholder for a Resistor icon/SVG -->
-                        <span class="text-6xl text-gray-700">&#x1F6B7;</span> <!-- Example Emoji -->
-                    </div>
-                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">Carbon Film Resistors</h4>
-                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
-                        Standard 1/4W, 5% tolerance. Available in a wide range of values from 1Ω to 1MΩ. Essential for current limiting.
-                    </p>
-                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
-                        $0.05 <span class="text-sm font-normal text-gray-400">/ each</span>
-                    </p>
-                    <a href="https://wa.me/923017647935?text=I%20want%20to%20order%20Carbon%20Film%20Resistors.%20Please%20let%20me%20know%20the%20minimum%20order%20quantity." 
-                       target="_blank" 
-                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
-                        Order Now
-                    </a>
-                </div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-8 border-b pb-2 pt-6">3. 💪 Actuators (Outputs)</h2>
+                <p class="text-lg text-gray-600 mb-6">Actuators translate electrical signals into motion, light, or sound.</p>
 
-                <!-- Component Card 2: LED -->
-                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
-                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
-                        <!-- Placeholder for an LED icon/SVG -->
-                        <span class="text-6xl text-yellow-500">&#x1F4A1;</span> <!-- Example Emoji -->
+                <h3 class="text-3xl font-semibold text-teal-600 mb-4">3.1 Motors (Motion Control)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
+                        <div class="image-placeholder"></div>
+                        <h4 class="text-xl font-medium text-gray-900 mt-3">3.1.2 Servo Motor</h4>
+                        <p class="text-sm text-gray-500">Precise angle control for robotics and small mechanisms.</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20Servo%20Motors" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
                     </div>
-                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">5mm Bright LEDs</h4>
-                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
-                        Assorted colors (Red, Green, Blue, Yellow). High brightness for indicator and lighting projects.
-                    </p>
-                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
-                        $0.15 <span class="text-sm font-normal text-gray-400">/ each</span>
-                    </p>
-                    <a href="https://wa.me/923017647935?text=I%20want%20to%20order%205mm%20Bright%20LEDs.%20I%20need%20a%20mix%20of%20colors." 
-                       target="_blank" 
-                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
-                        Order Now
-                    </a>
-                </div>
-
-                <!-- Component Card 3: Microcontroller (MCU) -->
-                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
-                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
-                        <!-- Placeholder for an MCU icon/SVG -->
-                        <span class="text-6xl text-blue-600">&#x1F4BB;</span> <!-- Example Emoji -->
-                    </div>
-                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">ESP32 Development Board</h4>
-                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
-                        Integrated Wi-Fi and Bluetooth. Dual-core processor. Perfect for IoT and advanced projects.
-                    </p>
-                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
-                        $5.50 <span class="text-sm font-normal text-gray-400">/ unit</span>
-                    </p>
-                    <a href="https://wa.me/923017647935?text=I%20am%20interested%20in%20the%20ESP32%20Development%20Board.%20Do%20you%20have%20bulk%20pricing%3F" 
-                       target="_blank" 
-                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
-                        Order Now
-                    </a>
-                </div>
-
-                <!-- Component Card 4: Capacitor -->
-                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
-                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
-                        <!-- Placeholder for a Capacitor icon/SVG -->
-                        <span class="text-6xl text-indigo-500">&#x26A1;</span> <!-- Example Emoji -->
-                    </div>
-                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">Electrolytic Capacitor Kit</h4>
-                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
-                        Various values, 10uF to 1000uF. 25V maximum rating. Ideal for filtering and power supply applications.
-                    </p>
-                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
-                        $12.99 <span class="text-sm font-normal text-gray-400">/ kit</span>
-                    </p>
-                    <a href="https://wa.me/923017647935?text=I%20would%20like%20to%20purchase%20the%20Electrolytic%20Capacitor%20Kit." 
-                       target="_blank" 
-                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
-                        Order Now
-                    </a>
                 </div>
 
             </div>
             
-            <!-- Instructions Section -->
-            <div class="mt-12 text-center p-8 bg-gray-200 rounded-xl shadow-inner">
-                <h4 class="text-2xl font-bold text-gray-700 mb-2">How to Buy</h4>
-                <p class="text-lg text-gray-600">
-                    Simply click any of the "Order Now" buttons or the main "Contact via WhatsApp" link to send us a pre-filled message. We will get back to you immediately to confirm the price, quantity, and arrange shipping!
-                </p>
-            </div>
+            <p class="mt-8 text-center text-gray-500">
+                *Note: The remaining components from the list (Nano, Mega, LM35, Relays, etc.) are available upon request. Click "Order Now" for any item to begin a WhatsApp inquiry.*
+            </p>
+        </div>
 
-        </section>
+        <div id="Services" class="tab-content bg-white p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 border-b pb-2">Services Offered</h2>
+            <p class="text-lg text-gray-600 mb-4">
+                We support your project beyond just supplying components. Our expertise helps you get started and troubleshoot effectively.
+            </p>
+            <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
+                <li>**Component Selection for Prototyping:** Guidance on choosing the right parts to match your project requirements.</li>
+                <li>**Understanding the I-P-O Cycle:** Clear documentation on how to integrate Inputs (Sensors), Processing (Controllers), and Outputs (Actuators).</li>
+                <li>**Hardware Integration Planning:** Best practices for wiring, circuit design, and reliable component connections.</li>
+                <li>**Custom Component Sourcing:** Help finding specialized or bulk components not listed here.</li>
+            </ul>
+        </div>
+
+        <div id="Contacts" class="tab-content bg-white p-8 rounded-xl shadow-xl">
+            <h2 class="text-4xl font-bold text-gray-800 mb-6 border-b pb-2">Get in Touch</h2>
+            <p class="text-lg text-gray-600 mb-6">
+                The fastest way to reach us for orders, quotes, or technical questions is through WhatsApp.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 items-center justify-center">
+                <div class="flex items-center text-gray-700">
+                    <svg class="w-6 h-6 mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.717 21 3 14.283 3 6V5z"></path></svg>
+                    <span class="font-semibold">WhatsApp:</span> +92 301 7647935
+                </div>
+
+                <a href="https://wa.me/923017647935" target="_blank" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out shadow-lg">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.002 0c6.623 0 12 5.378 12 12s-5.377 12-12 12c-2.094 0-4.045-.536-5.772-1.472l-4.228 1.472 1.492-4.144c-1.026-1.782-1.5-3.805-1.5-5.856 0-6.623 5.378-12 12-12zm3.321 16.488c-.144.254-.423.473-.728.528l-.053.003c-.227.014-1.293.023-2.316-.388-1.587-.624-3.411-2.039-4.821-4.636-.263-.483-.162-.647-.021-.806.143-.158.33-.298.471-.462.14-.165.298-.329.412-.472.115-.143.15-.26.242-.44.093-.18.067-.344-.025-.508-.09-.164-.204-.44-.319-.62-.115-.181-.23-.424-.23-.442-.093-.143-.207-.267-.298-.372-.093-.105-.207-.21-.308-.21-.105 0-.174.004-.266.009-.092.005-.23.018-.369.018-.139 0-.374-.018-.567-.018.196-.441.442-.648.728-.888.286-.24.62-.416.924-.623.303-.207.618-.473.97-.56.353-.087.712-.132 1.059-.132.345 0 .753.056 1.056.41.303.355.674 1.077.674 1.761 0 .685-.371 1.344-.674 1.758-.303.416-.583.504-.81.651-.227.147-.492.34-.675.487-.182.146-.372.339-.372.671 0 .332.189.57.371.723.18.153.49.336.726.487.236.15.522.34.675.487.153.146.29.352.428.532.139.18.318.47.37.585.05.115.105.21.105.325 0 .115-.055.23-.105.344-.052.115-.15.228-.276.359z"/></svg>
+                    Send Message Now
+                </a>
+            </div>
+            
+            <p class="mt-8 text-center text-sm text-gray-500">
+                For specific datasheets or code examples, please mention the exact component (e.g., "LM35 Datasheet") in your message.
+            </p>
+        </div>
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-800 text-white mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
-            <p class="text-sm">&copy; 2025 ComponentHub. All rights reserved. | Simple Component Showcase</p>
-            <div class="mt-2">
-                <p class="text-gray-400">For support, wholesale pricing, or custom requests:</p>
-                <!-- Central WhatsApp link -->
-                <a href="https://wa.me/923017647935" target="_blank" class="text-green-400 font-semibold hover:text-green-300 transition duration-150">
-                    WhatsApp: +92 301 7647935
-                </a>
-            </div>
+            <p class="text-sm">&copy; 2025 Component Guide. All rights reserved. | Simple Component Showcase</p>
         </div>
     </footer>
 </body>

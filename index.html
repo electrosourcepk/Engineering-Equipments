@@ -41,20 +41,6 @@
             color: #2dd4bf;
             font-weight: 600;
         }
-
-        /* Component image placeholder styling */
-        .image-placeholder {
-            background-color: #e5e7eb;
-            color: #4b5563;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 8px;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-        }
     </style>
     <script>
         // JavaScript for Tab Switching
@@ -95,8 +81,8 @@
             </nav>
 
             <a href="https://wa.me/923017647935?text=Hello!%20I%20visited%20your%20website%20and%20I%20have%20an%20inquiry%20about%20your%20components." 
-               target="_blank" 
-               class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
+                target="_blank" 
+                class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.002 0c6.623 0 12 5.378 12 12s-5.377 12-12 12c-2.094 0-4.045-.536-5.772-1.472l-4.228 1.472 1.492-4.144c-1.026-1.782-1.5-3.805-1.5-5.856 0-6.623 5.378-12 12-12zm3.321 16.488c-.144.254-.423.473-.728.528l-.053.003c-.227.014-1.293.023-2.316-.388-1.587-.624-3.411-2.039-4.821-4.636-.263-.483-.162-.647-.021-.806.143-.158.33-.298.471-.462.14-.165.298-.329.412-.472.115-.143.15-.26.242-.44.093-.18.067-.344-.025-.508-.09-.164-.204-.44-.319-.62-.115-.181-.23-.424-.23-.442-.093-.143-.207-.267-.298-.372-.093-.105-.207-.21-.308-.21-.105 0-.174.004-.266.009-.092.005-.23.018-.369.018-.139 0-.374-.018-.567-.018.196-.441.442-.648.728-.888.286-.24.62-.416.924-.623.303-.207.618-.473.97-.56.353-.087.712-.132 1.059-.132.345 0 .753.056 1.056.41.303.355.674 1.077.674 1.761 0 .685-.371 1.344-.674 1.758-.303.416-.583.504-.81.651-.227.147-.492.34-.675.487-.182.146-.372.339-.372.671 0 .332.189.57.371.723.18.153.49.336.726.487.236.15.522.34.675.487.153.146.29.352.428.532.139.18.318.47.37.585.05.115.105.21.105.325 0 .115-.055.23-.105.344-.052.115-.15.228-.276.359z"/></svg>
                 Contact via WhatsApp
             </a>
@@ -107,10 +93,10 @@
         
         <div id="Home" class="tab-content active bg-white p-8 rounded-xl shadow-xl">
             <h2 class="text-5xl font-extrabold text-gray-900 mb-4 text-center">
-                Welcome to the **Embedded Systems & IoT Component Guide!**
+                Welcome to the Component Guide!
             </h2>
             <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-6 text-center">
-                This resource provides a structured, visual list of the essential hardware components—from the main **Controllers** to the **Sensors** and **Actuators**—needed to bring your IoT and embedded projects to life. Use the tabs above to navigate the detailed sections.
+                This resource provides a structured, visual list of the essential hardware components—from the main Controllers to the Sensors and Actuators—needed to bring your electronic projects to life. Use the tabs above to navigate the detailed sections.
             </p>
             <div class="text-center">
                 <a href="#" onclick="openTab('Projects')" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-teal-500 hover:bg-teal-600 transition duration-150 ease-in-out shadow-lg">
@@ -122,13 +108,13 @@
         <div id="About" class="tab-content bg-white p-8 rounded-xl shadow-xl">
             <h2 class="text-4xl font-bold text-gray-800 mb-6 border-b pb-2">About This Guide</h2>
             <p class="text-lg text-gray-600 mb-4">
-                This guide is designed for **clarity and quick reference**. It is structured to help you understand the role of each component within a complete system.
+                This guide is designed for clarity and quick reference. It is structured to help you understand the role of each component within a complete system.
             </p>
             <h3 class="text-2xl font-semibold text-teal-600 mb-3">The Three Primary Functions of an Electronic System:</h3>
             <ul class="list-disc list-inside space-y-2 text-gray-700 ml-4">
-                <li>**Controller (The Brain):** Executes code and manages the system. This is where your intelligence lives.</li>
-                <li>**Sensors (The Senses):** Gathers input from the environment (temperature, light, motion, etc.).</li>
-                <li>**Actuators (The Muscles):** Executes physical actions or displays output (turning a motor, lighting an LED, showing text on a screen).</li>
+                <li>Controller (The Brain): Executes code and manages the system. This is where your intelligence lives.</li>
+                <li>Sensors (The Senses): Gathers input from the environment (temperature, light, motion, etc.).</li>
+                <li>Actuators (The Muscles): Executes physical actions or displays output (turning a motor, lighting an LED, showing text on a screen).</li>
             </ul>
         </div>
 
@@ -140,25 +126,28 @@
                 <h3 class="text-3xl font-semibold text-teal-600 mb-4">1.1 Microcontrollers & System-on-Chips (SoCs)</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
-                        <div class="image-placeholder">
-
-[Image of Arduino Uno]
-</div>
+                        <div class="w-full h-32 flex items-center justify-center bg-white rounded-lg overflow-hidden border border-gray-200">
+                            <img src="https://via.placeholder.com/120x120/1d4ed8/ffffff?text=Arduino+Uno" alt="Arduino Uno Microcontroller" class="object-contain h-full w-full p-2">
+                        </div>
                         <h4 class="text-xl font-medium text-gray-900 mt-3">1.1.1 Arduino Uno</h4>
-                        <p class="text-sm text-gray-500">The beginner-friendly, standard 8-bit board.</p>
-                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20Arduino%20Uno" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                        <p class="text-sm text-gray-500">The beginner-friendly, standard 8-bit board. **Price: $5.00**</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20Arduino%20Uno%20%28%245.00%29" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
                     </div>
                     <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
-                        <div class="image-placeholder"></div>
+                        <div class="w-full h-32 flex items-center justify-center bg-white rounded-lg overflow-hidden border border-gray-200">
+                            <img src="https://via.placeholder.com/120x120/f97316/ffffff?text=ESP32" alt="ESP32 Development Board" class="object-contain h-full w-full p-2">
+                        </div>
                         <h4 class="text-xl font-medium text-gray-900 mt-3">1.1.4 ESP32 (Wi-Fi/BLE)</h4>
-                        <p class="text-sm text-gray-500">Dual-core processing with integrated IoT connectivity.</p>
-                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20ESP32" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                        <p class="text-sm text-gray-500">Dual-core processing with integrated IoT connectivity. **Price: $6.50**</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20ESP32%20%28%246.50%29" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
                     </div>
                     <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
-                        <div class="image-placeholder"></div>
+                        <div class="w-full h-32 flex items-center justify-center bg-white rounded-lg overflow-hidden border border-gray-200">
+                            <img src="https://via.placeholder.com/120x120/059669/ffffff?text=ESP8266" alt="ESP8266 Wi-Fi Module" class="object-contain h-full w-full p-2">
+                        </div>
                         <h4 class="text-xl font-medium text-gray-900 mt-3">1.1.5 ESP8266 (Wi-Fi)</h4>
-                        <p class="text-sm text-gray-500">Cost-effective Wi-Fi solution for simple IoT tasks.</p>
-                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20ESP8266" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                        <p class="text-sm text-gray-500">Cost-effective Wi-Fi solution for simple IoT tasks. **Price: $3.50**</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20ESP8266%20%28%243.50%29" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
                     </div>
                 </div>
 
@@ -168,16 +157,20 @@
                 <h3 class="text-3xl font-semibold text-teal-600 mb-4">2.1 Environmental & Chemical Sensors</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
-                        <div class="image-placeholder"></div>
+                        <div class="w-full h-32 flex items-center justify-center bg-white rounded-lg overflow-hidden border border-gray-200">
+                            <img src="https://via.placeholder.com/120x120/dc2626/ffffff?text=DHT11" alt="DHT11 Temperature Humidity Sensor" class="object-contain h-full w-full p-2">
+                        </div>
                         <h4 class="text-xl font-medium text-gray-900 mt-3">2.1.1 DHT11/22 (Temp/Humidity)</h4>
-                        <p class="text-sm text-gray-500">Digital sensors for temperature and relative humidity.</p>
-                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20DHT11/22%20Sensor" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                        <p class="text-sm text-gray-500">Digital sensors for temperature and relative humidity. **Price: $1.50**</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20DHT11/22%20Sensor%20%28%241.50%29" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
                     </div>
                     <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
-                        <div class="image-placeholder"></div>
+                        <div class="w-full h-32 flex items-center justify-center bg-white rounded-lg overflow-hidden border border-gray-200">
+                            <img src="https://via.placeholder.com/120x120/7c3aed/ffffff?text=MQ+Sensor" alt="MQ-series Gas Sensor" class="object-contain h-full w-full p-2">
+                        </div>
                         <h4 class="text-xl font-medium text-gray-900 mt-3">2.1.4 MQ-series (Gas)</h4>
-                        <p class="text-sm text-gray-500">Detects various gases (e.g., smoke, alcohol, LPG).</p>
-                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20MQ-series%20Gas%20Sensor" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                        <p class="text-sm text-gray-500">Detects various gases (e.g., smoke, alcohol, LPG). **Price: $2.00**</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20MQ-series%20Gas%20Sensor%20%28%242.00%29" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
                     </div>
                 </div>
                 
@@ -187,17 +180,19 @@
                 <h3 class="text-3xl font-semibold text-teal-600 mb-4">3.1 Motors (Motion Control)</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="component-card bg-gray-50 rounded-lg overflow-hidden shadow-lg p-4">
-                        <div class="image-placeholder"></div>
+                        <div class="w-full h-32 flex items-center justify-center bg-white rounded-lg overflow-hidden border border-gray-200">
+                            <img src="https://via.placeholder.com/120x120/ca8a04/ffffff?text=Servo" alt="SG90 Servo Motor" class="object-contain h-full w-full p-2">
+                        </div>
                         <h4 class="text-xl font-medium text-gray-900 mt-3">3.1.2 Servo Motor</h4>
-                        <p class="text-sm text-gray-500">Precise angle control for robotics and small mechanisms.</p>
-                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20Servo%20Motors" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
+                        <p class="text-sm text-gray-500">Precise angle control for robotics and small mechanisms. **Price: $1.75**</p>
+                        <a href="https://wa.me/923017647935?text=Inquiry%20about%20Servo%20Motors%20%28%241.75%29" target="_blank" class="block mt-3 text-center py-1 text-sm bg-teal-500 text-white rounded hover:bg-teal-600">Order Now</a>
                     </div>
                 </div>
 
             </div>
             
             <p class="mt-8 text-center text-gray-500">
-                *Note: The remaining components from the list (Nano, Mega, LM35, Relays, etc.) are available upon request. Click "Order Now" for any item to begin a WhatsApp inquiry.*
+                *Note: The remaining components from the list (Nano, Mega, LM35, Relays, etc.) are available upon request. Click "Order Now" for any item to begin a WhatsApp inquiry. Prices are subject to change.*
             </p>
         </div>
 
@@ -207,10 +202,10 @@
                 We support your project beyond just supplying components. Our expertise helps you get started and troubleshoot effectively.
             </p>
             <ul class="list-disc list-inside space-y-3 text-gray-700 ml-4">
-                <li>**Component Selection for Prototyping:** Guidance on choosing the right parts to match your project requirements.</li>
-                <li>**Understanding the I-P-O Cycle:** Clear documentation on how to integrate Inputs (Sensors), Processing (Controllers), and Outputs (Actuators).</li>
-                <li>**Hardware Integration Planning:** Best practices for wiring, circuit design, and reliable component connections.</li>
-                <li>**Custom Component Sourcing:** Help finding specialized or bulk components not listed here.</li>
+                <li>Component Selection for Prototyping: Guidance on choosing the right parts to match your project requirements.</li>
+                <li>Understanding the I-P-O Cycle: Clear documentation on how to integrate Inputs (Sensors), Processing (Controllers), and Outputs (Actuators).</li>
+                <li>Hardware Integration Planning: Best practices for wiring, circuit design, and reliable component connections.</li>
+                <li>Custom Component Sourcing: Help finding specialized or bulk components not listed here.</li>
             </ul>
         </div>
 

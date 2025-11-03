@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectricaltHub | Your Source for Electronics</title>
+    <!-- Load Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font import and background for a professional, technical look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+
+        /* Styling for the component cards for a clean, interactive look */
+        .component-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(45, 212, 191, 0.4), 0 4px 6px -4px rgba(45, 212, 191, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased">
+    
+    <!-- Header / Navbar -->
+    <header class="bg-gray-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold tracking-tight text-teal-400">Component<span class="text-white">Hub</span></h1>
+            <!-- General WhatsApp Contact Button -->
+            <a href="https://wa.me/923017647935?text=Hello!%20I%20visited%20your%20website%20and%20I%20have%20an%20inquiry%20about%20your%20components." 
+               target="_blank" 
+               class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-full text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.002 0c6.623 0 12 5.378 12 12s-5.377 12-12 12c-2.094 0-4.045-.536-5.772-1.472l-4.228 1.472 1.492-4.144c-1.026-1.782-1.5-3.805-1.5-5.856 0-6.623 5.378-12 12-12zm3.321 16.488c-.144.254-.423.473-.728.528l-.053.003c-.227.014-1.293.023-2.316-.388-1.587-.624-3.411-2.039-4.821-4.636-.263-.483-.162-.647-.021-.806.143-.158.33-.298.471-.462.14-.165.298-.329.412-.472.115-.143.15-.26.242-.44.093-.18.067-.344-.025-.508-.09-.164-.204-.44-.319-.62-.115-.181-.23-.424-.23-.442-.093-.143-.207-.267-.298-.372-.093-.105-.207-.21-.308-.21-.105 0-.174.004-.266.009-.092.005-.23.018-.369.018-.139 0-.374-.018-.567-.018.196-.441.442-.648.728-.888.286-.24.62-.416.924-.623.303-.207.618-.473.97-.56.353-.087.712-.132 1.059-.132.345 0 .753.056 1.056.41.303.355.674 1.077.674 1.761 0 .685-.371 1.344-.674 1.758-.303.416-.583.504-.81.651-.227.147-.492.34-.675.487-.182.146-.372.339-.372.671 0 .332.189.57.371.723.18.153.49.336.726.487.236.15.522.34.675.487.153.146.29.352.428.532.139.18.318.47.37.585.05.115.105.21.105.325 0 .115-.055.23-.105.344-.052.115-.15.228-.276.359z"/></svg>
+                Contact via WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 bg-white p-8 rounded-xl shadow-xl">
+            <h2 class="text-5xl font-extrabold text-gray-900 mb-4">
+                The Essential Components You Need
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
+                Explore our catalog of high-quality resistors, microcontrollers, LEDs, and more. Found what you need? Hit the "Order Now" button to contact us directly via WhatsApp and secure your purchase!
+            </p>
+            <!-- Call to action button to WhatsApp -->
+            <a href="https://wa.me/923017647935?text=I%20am%20ready%20to%20place%20an%20order%20for%20some%20of%20your%20electronic%20components." 
+               target="_blank" 
+               class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-teal-500 hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 transition duration-150 ease-in-out shadow-lg">
+                <span class="mr-2 text-xl">&#x1F4F1;</span> Start Your Order on WhatsApp
+            </a>
+        </section>
+
+        <!-- Components Grid -->
+        <section>
+            <h3 class="text-4xl font-bold text-gray-800 mb-8 text-center border-b-2 border-teal-400 pb-2">Our Featured Components</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Component Card 1: Resistor -->
+                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
+                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                        <!-- Placeholder for a Resistor icon/SVG -->
+                        <span class="text-6xl text-gray-700">&#x1F6B7;</span> <!-- Example Emoji -->
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">Carbon Film Resistors</h4>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
+                        Standard 1/4W, 5% tolerance. Available in a wide range of values from 1Ω to 1MΩ. Essential for current limiting.
+                    </p>
+                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
+                        $0.05 <span class="text-sm font-normal text-gray-400">/ each</span>
+                    </p>
+                    <a href="https://wa.me/923017647935?text=I%20want%20to%20order%20Carbon%20Film%20Resistors.%20Please%20let%20me%20know%20the%20minimum%20order%20quantity." 
+                       target="_blank" 
+                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Component Card 2: LED -->
+                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
+                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                        <!-- Placeholder for an LED icon/SVG -->
+                        <span class="text-6xl text-yellow-500">&#x1F4A1;</span> <!-- Example Emoji -->
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">5mm Bright LEDs</h4>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
+                        Assorted colors (Red, Green, Blue, Yellow). High brightness for indicator and lighting projects.
+                    </p>
+                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
+                        $0.15 <span class="text-sm font-normal text-gray-400">/ each</span>
+                    </p>
+                    <a href="https://wa.me/923017647935?text=I%20want%20to%20order%205mm%20Bright%20LEDs.%20I%20need%20a%20mix%20of%20colors." 
+                       target="_blank" 
+                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Component Card 3: Microcontroller (MCU) -->
+                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
+                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                        <!-- Placeholder for an MCU icon/SVG -->
+                        <span class="text-6xl text-blue-600">&#x1F4BB;</span> <!-- Example Emoji -->
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">ESP32 Development Board</h4>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
+                        Integrated Wi-Fi and Bluetooth. Dual-core processor. Perfect for IoT and advanced projects.
+                    </p>
+                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
+                        $5.50 <span class="text-sm font-normal text-gray-400">/ unit</span>
+                    </p>
+                    <a href="https://wa.me/923017647935?text=I%20am%20interested%20in%20the%20ESP32%20Development%20Board.%20Do%20you%20have%20bulk%20pricing%3F" 
+                       target="_blank" 
+                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
+                        Order Now
+                    </a>
+                </div>
+
+                <!-- Component Card 4: Capacitor -->
+                <div class="component-card bg-white rounded-xl overflow-hidden shadow-lg p-6 flex flex-col items-center">
+                    <div class="w-24 h-24 mb-4 flex items-center justify-center bg-gray-100 rounded-lg">
+                        <!-- Placeholder for a Capacitor icon/SVG -->
+                        <span class="text-6xl text-indigo-500">&#x26A1;</span> <!-- Example Emoji -->
+                    </div>
+                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">Electrolytic Capacitor Kit</h4>
+                    <p class="text-sm text-gray-500 text-center mb-4 flex-grow">
+                        Various values, 10uF to 1000uF. 25V maximum rating. Ideal for filtering and power supply applications.
+                    </p>
+                    <p class="text-3xl font-extrabold text-teal-600 mb-4">
+                        $12.99 <span class="text-sm font-normal text-gray-400">/ kit</span>
+                    </p>
+                    <a href="https://wa.me/923017647935?text=I%20would%20like%20to%20purchase%20the%20Electrolytic%20Capacitor%20Kit." 
+                       target="_blank" 
+                       class="w-full text-center py-2 bg-teal-500 text-white rounded-full hover:bg-teal-600 transition duration-150">
+                        Order Now
+                    </a>
+                </div>
+
+            </div>
+            
+            <!-- Instructions Section -->
+            <div class="mt-12 text-center p-8 bg-gray-200 rounded-xl shadow-inner">
+                <h4 class="text-2xl font-bold text-gray-700 mb-2">How to Buy</h4>
+                <p class="text-lg text-gray-600">
+                    Simply click any of the "Order Now" buttons or the main "Contact via WhatsApp" link to send us a pre-filled message. We will get back to you immediately to confirm the price, quantity, and arrange shipping!
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p class="text-sm">&copy; 2025 ComponentHub. All rights reserved. | Simple Component Showcase</p>
+            <div class="mt-2">
+                <p class="text-gray-400">For support, wholesale pricing, or custom requests:</p>
+                <!-- Central WhatsApp link -->
+                <a href="https://wa.me/923017647935" target="_blank" class="text-green-400 font-semibold hover:text-green-300 transition duration-150">
+                    WhatsApp: +92 301 7647935
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
